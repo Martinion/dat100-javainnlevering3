@@ -1,6 +1,8 @@
 package no.hvl.dat100.oppgave4;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.File;
 import java.io.PrintWriter;
 
 import no.hvl.dat100.common.TODO;
@@ -10,6 +12,19 @@ public class SkrivBlogg {
 
 	public static boolean skriv(Blogg samling, String mappe, String filnavn) {
 
-		throw new UnsupportedOperationException(TODO.method());
+		PrintWriter writer;
+		
+		try {
+			File file = new File(mappe + filnavn);
+			writer = new PrintWriter(file);
+			writer.write(samling.toString());
+			writer.close();
+			return true;
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
+		
+		return false;
 	}
 }
