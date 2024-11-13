@@ -19,6 +19,7 @@ public abstract class Innlegg {
 		this.id = id;
 		this.bruker = bruker;
 		this.dato = dato;
+		likes = 0;
 	}
 
 	public Innlegg(int id, String bruker, String dato, int likes) {

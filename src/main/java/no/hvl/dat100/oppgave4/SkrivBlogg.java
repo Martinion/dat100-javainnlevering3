@@ -15,8 +15,8 @@ public class SkrivBlogg {
 		PrintWriter writer;
 		
 		try {
-			File file = new File(mappe + filnavn);
-			writer = new PrintWriter(file);
+			// File file = new File(mappe + filnavn);
+			writer = new PrintWriter(mappe + filnavn);
 			writer.write(samling.toString());
 			writer.close();
 			return true;
